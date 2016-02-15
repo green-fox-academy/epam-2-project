@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/greenfox-academy/epam-2-project#readme",
   "devDependencies": {
+    "angular-mocks": "^1.5.0",
     "gulp": "^3.9.1",
     "jasmine": "^2.4.1",
     "jshint": "^2.9.1",
