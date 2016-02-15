@@ -15,5 +15,20 @@
   "bugs": {
     "url": "https://github.com/greenfox-academy/epam-2-project/issues"
   },
-  "homepage": "https://github.com/greenfox-academy/epam-2-project#readme"
+  "homepage": "https://github.com/greenfox-academy/epam-2-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "jasmine": "^2.4.1",
+    "jshint": "^2.9.1",
+    "karma": "^0.13.21",
+    "karma-cli": "^0.1.2",
+    "supertest": "^1.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "pg": "^4.4.4",
+    "request": "^2.69.0"
+  }
 }
