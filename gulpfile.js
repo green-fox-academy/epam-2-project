@@ -4,6 +4,7 @@ require('./gulp/gulp_karma.js');
 require('./gulp/gulp_jasmine.js');
 require('./gulp/gulp_jshint.js');
 require('./gulp/gulp_watch.js');
+require('./gulp/gulp_sass.js');
 
 var gulp = require('gulp');
 var gulpUtil = require('gulp-util');

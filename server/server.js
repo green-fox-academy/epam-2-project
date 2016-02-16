@@ -7,7 +7,7 @@ var logger = require('./logger');
 function setup(connection) {
   var app = express();
   app.use(logRequest);
-  app.use(express.static('public'));
+  app.use(express.static(__dirname +'/../public'));
   app.use(bodyParser.json());
 
   app.get('/heartbeat', heartbeatEndpoint(connection));
