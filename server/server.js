@@ -1,8 +1,8 @@
 'use strict';
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var heartbeatEndpoint = require('./heartbeat_endpoint');
+var logger = require('./logger');
 
 function setup(connection) {
   var app = express();
@@ -18,7 +18,7 @@ function setup(connection) {
       req.method,
       req.originalUrl,
     ];
-    console.log(parts);
+    logger.info(parts);
     next();
   }
   return app;
