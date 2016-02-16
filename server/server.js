@@ -2,26 +2,26 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-var port = require('./config.js').port;
-var heartbeat = require('./heartbeat.js');
+var heartbeatEndpoint = require('./heartbeat_endpoint');
 
-var app = express();
-app.use(logRequest);
-app.use(express.static('public'));
-app.use(bodyParser.json());
+function setup(connection) {
+  var app = express();
+  app.use(logRequest);
+  app.use(express.static('public'));
+  app.use(bodyParser.json());
 
-app.get('/heartbeat', heartbeat.test);
+  app.get('/heartbeat', heartbeatEndpoint(connection));
 
-app.listen(port, function () {
-  console.log('Listening on port', port);
-});
-
-function logRequest(req, res, next) {
-  var parts = [
-    new Date(),
-    req.method,
-    req.originalUrl,
-  ];
-  console.log(parts);
-  next();
+  function logRequest(req, res, next) {
+    var parts = [
+      new Date(),
+      req.method,
+      req.originalUrl,
+    ];
+    console.log(parts);
+    next();
+  }
+  return app;
 }
+
+module.exports= setup;
