@@ -1,6 +1,6 @@
 'use strict';
 
-var environment = process.env.BACKEND_LEVEL || 'info';
+var environment = require('./config.js').BACKEND_LEVEL;
 console.log(environment);
 
 
