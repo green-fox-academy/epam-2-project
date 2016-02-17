@@ -8,6 +8,8 @@
   <body ng-app='helloApp'>
     <h1 ng-controller='helloController'>{{hello}}</h1>
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-ui-router.min.js"></script>
+    <script>var myApp = angular.module('myApp', ['ui.router'])</script>
     <script type="text/javascript" src="js/hello.js"></script>
   </body>
 </html>
