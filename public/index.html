@@ -7,9 +7,19 @@
   </head>
   <body ng-app='helloApp'>
     <h1 ng-controller='helloController'>{{hello}}</h1>
+
+    <div>
+        <a ui-sref="registration">Registration</a>
+        <a ui-sref="login">Login</a>
+    </div>
+
+    <div>
+        <div ui-view></div>
+        <!-- We'll also add some navigation: -->
+    </div>
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script src="js/lib/angular-ui-router.min.js"></script>
-    <script>var myApp = angular.module('myApp', ['ui.router'])</script>
     <script type="text/javascript" src="js/hello.js"></script>
+    <script type="text/javascript" src="js/index_router.js"></script>
   </body>
 </html>
