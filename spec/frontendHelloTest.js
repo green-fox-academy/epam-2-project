@@ -1,8 +1,8 @@
 'use strict';
 
-describe('hello check', function () {
+describe('logo name check', function () {
 
-  beforeEach(module('helloApp'));
+  beforeEach(module('interviewApp'));
 
   var $controller;
 
@@ -10,11 +10,11 @@ describe('hello check', function () {
     $controller = _$controller_;
   }));
 
-  describe('sayingHello', function () {
-        it('should say hello', function () {
+  describe('saying company', function () {
+        it('should say Epam', function () {
             var $scope = {};
-            var controller = $controller('helloController', { $scope: $scope });
-            expect($scope.hello).toBe('Hello');
+            var controller = $controller('epamController', { $scope: $scope });
+            expect($scope.logoname).toBe('Epam');
         });
     });
 });
