@@ -9,7 +9,7 @@ app.controller('epamController', ['$scope', function($scope) {
 app.config(function($stateProvider, $urlRouterProvider){
 
       $urlRouterProvider.otherwise("/");
-      
+
       $stateProvider
           .state('index', {
               url: "/",
