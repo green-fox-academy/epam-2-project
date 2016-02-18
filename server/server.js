@@ -11,13 +11,22 @@ function setup(connection) {
   app.use(bodyParser.json());
 
   app.get('/heartbeat', heartbeatEndpoint(connection));
+  app.post('/api/log', function (req, res) {
+    logger[req.body.level]({
+      origin: 'FRONTEND',
+      date: req.body.date,
+      level: req.body.level,
+      data: req.body.data,
+    });
+    res.status(200).json({});
+  });
 
   function logRequest(req, res, next) {
-    var parts = [
-      new Date(),
-      req.method,
-      req.originalUrl,
-    ];
+    var parts = {
+      date:new Date(),
+      method: req.method,
+      URL: req.originalUrl,
+    };
     logger.info(parts);
     next();
   }

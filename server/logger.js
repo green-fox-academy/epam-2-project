@@ -1,8 +1,16 @@
 'use strict';
 
-var environment = require('./config.js').BACKEND_LEVEL;
-console.log(environment);
+var environment = require('./config.js').BACKEND_LOGGER_LEVEL;
+var levels = require('./config.js').levels;
+var environmentLevel= wichLevel(environment);
 
+function wichLevel(environment){
+  for (var i = 0; i < levels.length; i++) {
+    if (levels[i] === environment){
+      return i;
+    }
+  }
+}
 
 function debug(object) {
   log('debug', object);
@@ -21,9 +29,7 @@ function error(object) {
 }
 
 function log(level,obj) {
-  if (environment === 'debug') {
-    console.log(obj);
-  } else if(level === environment) {
+  if (environmentLevel <= wichLevel(level)) {
     console.log(obj);
   }
 }
@@ -33,4 +39,4 @@ module.exports= {
   info: info,
   warn: warn,
   error: error
-}
+};

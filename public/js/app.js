@@ -1,15 +1,16 @@
 'use strict';
 
-var app = angular.module('interviewApp', ["ui.router"]);
-app.controller('epamController', ['$scope', function($scope) {
-    $scope.logoname = 'Epam';
+var app = angular.module('interviewApp', ["ui.router","log"]);
+app.controller('epamController', ['$scope', "logger", function($scope, logger) {
+  logger.info('onload');
+  $scope.logoname = 'Epam';
 }]);
 
 
 app.config(function($stateProvider, $urlRouterProvider){
 
       $urlRouterProvider.otherwise("/");
-      
+
       $stateProvider
           .state('index', {
               url: "/",
