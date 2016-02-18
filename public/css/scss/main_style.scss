@@ -1,7 +1,45 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #39C2D7;
+$headerHeight: 80px;
+$buttonHeight: 50px;
+$inputHeight: $buttonHeight;
+$inputWidth: 150px;
+$lightgrey: #E6E6E6;
+$darkgrey: #4A4A4A;
+$blue: #39C2D7;
+$fontSizeLarge: 26px;
+$fontSize: 16px;
+
+header {
+  height: $headerHeight;
+  width: auto;
+  background-color: $lightgrey;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: $darkgrey;
+}
+
+img {
+  height: 50px;
+}
+
+.menuname {
+  font-family: 'Oswald';
+  font-size: $fontSizeLarge;
+  color: $darkgrey;
+  text-transform: uppercase;
+}
+
+.logo {
+  padding-top: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 body {
   font: 100% $font-stack;
-  color: $primary-color;
-}		
+  font-family: 'Lato';
+}
