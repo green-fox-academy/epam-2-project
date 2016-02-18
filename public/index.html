@@ -3,12 +3,18 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald|Lato' rel='stylesheet' type='text/css'>
     <title>Hello</title>
   </head>
   <body ng-app='interviewApp'>
-    <div >
-      <h1 ng-controller='epamController'>{{logoname}}</h1>
-    </div>
+    <header >
+      <div class="logo">
+        <img src="img/epam_logo.png" alt="" />
+      </div>
+      <div class="menuname">
+        Interviewer
+      </div>
+    </header>
 
     <div ui-view></div>
 
