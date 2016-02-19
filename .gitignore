@@ -3,3 +3,4 @@ node_modules/*
 *.pdf
 *.css
 *.css.map
+*.log
