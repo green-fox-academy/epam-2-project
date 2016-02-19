@@ -9,6 +9,7 @@ $darkgrey: #4A4A4A;
 $blue: #39C2D7;
 $fontSizeLarge: 26px;
 $fontSize: 16px;
+$borderRadius: 3px;
 
 header {
   height: $headerHeight;
@@ -42,4 +43,23 @@ img {
 body {
   font: 100% $font-stack;
   font-family: 'Lato';
+}
+
+button {
+  background-color: $blue;
+  border-radius: $borderRadius;
+  font-family: 'Oswald';
+  height: $buttonHeight;
+  width: $inputWidth;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  font-size: $fontSize;
+  justify-content: center;
 }
