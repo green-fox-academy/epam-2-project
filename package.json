@@ -39,6 +39,7 @@
     "angular-ui-router": "^0.2.18",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
+    "newrelic": "^1.25.3",
     "pg": "^4.4.4",
     "request": "^2.69.0"
   }
