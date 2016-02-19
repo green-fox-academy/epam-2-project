@@ -2,9 +2,9 @@
 
 var environment = require('./config.js').BACKEND_LOGGER_LEVEL;
 var levels = require('./config.js').levels;
-var environmentLevel= wichLevel(environment);
+var environmentLevel= whichLevel(environment);
 
-function wichLevel(environment){
+function whichLevel(environment){
   for (var i = 0; i < levels.length; i++) {
     if (levels[i] === environment){
       return i;
@@ -29,7 +29,7 @@ function error(object) {
 }
 
 function log(level,obj) {
-  if (environmentLevel <= wichLevel(level)) {
+  if (environmentLevel <= whichLevel(level)) {
     console.log(obj);
   }
 }
