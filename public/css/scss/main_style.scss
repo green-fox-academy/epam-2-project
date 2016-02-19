@@ -15,6 +15,12 @@ html {
   border: 0;
 }
 
+body {
+  font: 100% $font-stack;
+  font-family: 'Lato';
+  margin: 0;
+}
+
 header {
   align-items: center;
   background-color: $lightgrey;
@@ -29,41 +35,17 @@ img {
   height: 50px;
 }
 
-.menuname {
-  font-family: 'Oswald';
-  font-size: $fontSizeLarge;
-  color: $darkgrey;
-  text-transform: uppercase;
-}
-
 .logo {
   padding-top: 12px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-body {
-  font: 100% $font-stack;
-  font-family: 'Lato';
-  margin: 0;
-}
-
-button {
-  background-color: $blue;
-  border: 0;
-  border-radius: $borderRadius;
-  box-shadow: 0 0 2px black;
-  margin-right: 30px;
-  margin-left: 30px;
-  height: $buttonHeight;
-  width: $inputWidth;
-}
-
-button a {
-  color: white;
+.menuname {
   font-family: 'Oswald';
-  font-size: $fontSize;
-  text-decoration: none;
+  font-size: $fontSizeLarge;
+  color: $darkgrey;
+  text-transform: uppercase;
 }
 
 .buttons {
@@ -72,8 +54,27 @@ button a {
   margin: 270px;
 }
 
+button {
+  background-color: $blue;
+  border: 0;
+  border-radius: $borderRadius;
+  box-shadow: 0 1px 4px -1px $darkgrey;
+  cursor: pointer;
+  height: $buttonHeight;
+  width: $inputWidth;
+}
+
+a button {
+  color: white;
+  font-family: 'Oswald';
+  font-size: $fontSize;
+  text-decoration: none;
+}
+
 .middlebox {
   color: $darkgrey;
   line-height: $buttonHeight;
+  margin-left: 30px;
+  margin-right: 30px;
   text-align: center;
 }
