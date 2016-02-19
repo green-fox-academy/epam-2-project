@@ -1,5 +1,6 @@
 'use strict';
 
+require('newrelic');
 var connection = require('./database_connection');
 var server = require('./server')
 var port = require('./config').port;
