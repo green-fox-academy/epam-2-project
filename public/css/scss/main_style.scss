@@ -11,16 +11,18 @@ $fontSizeLarge: 26px;
 $fontSize: 16px;
 $borderRadius: 3px;
 
+html {
+  border: 0;
+}
+
 header {
-  height: $headerHeight;
-  width: auto;
-  background-color: $lightgrey;
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: $darkgrey;
+  background-color: $lightgrey;
+  box-shadow: 0 0 1px black;
+  display: flex;
+  height: $headerHeight;
+  justify-content: flex-start;
+  width: auto;
 }
 
 img {
@@ -43,23 +45,35 @@ img {
 body {
   font: 100% $font-stack;
   font-family: 'Lato';
+  margin: 0;
 }
 
 button {
   background-color: $blue;
+  border: 0;
   border-radius: $borderRadius;
-  font-family: 'Oswald';
+  box-shadow: 0 0 2px black;
+  margin-right: 30px;
+  margin-left: 30px;
   height: $buttonHeight;
   width: $inputWidth;
 }
 
 button a {
-  text-decoration: none;
   color: white;
+  font-family: 'Oswald';
+  font-size: $fontSize;
+  text-decoration: none;
 }
 
 .buttons {
   display: flex;
-  font-size: $fontSize;
   justify-content: center;
+  margin: 270px;
+}
+
+.middlebox {
+  color: $darkgrey;
+  line-height: $buttonHeight;
+  text-align: center;
 }
