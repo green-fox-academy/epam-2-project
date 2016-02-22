@@ -17,7 +17,6 @@ app.controller('RegistrationController', function($http) {
     function(err) {
       this.errorCallback = err;
     });
-    this.user = {};
   };
 });
 
