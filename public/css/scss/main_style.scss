@@ -82,7 +82,12 @@ a button {
 }
 
 .tofill {
-  height: $inputHeight;
-  width: $inputWidth;
+  border-radius: $borderRadius;
+  border-color: $blue;
+  box-shadow: 0 0 4px -1px $darkgrey;
+  font-family: 'Lato';
+  font-size: $fontSize;
+  height: $buttonHeight;
+  width: 450px;
 
 }
