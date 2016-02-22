@@ -18,7 +18,7 @@ app.controller('RegistrationController', function($http) {
       this.errorCallback = err;
     });
     this.user = {};
-  }
+  };
 });
 
 
@@ -26,7 +26,7 @@ app.controller('RegistrationController', function($http) {
 
 app.config(function($stateProvider, $urlRouterProvider){
 
-      $urlRouterProvider.otherwise("/");
+      $urlRouterProvider.otherwise('/');
 
       $stateProvider
           .state('index', {
@@ -41,5 +41,5 @@ app.config(function($stateProvider, $urlRouterProvider){
           .state('login', {
               url: '/login',
               templateUrl: 'templates/partial-login.html'
-          })
-      })
+          });
+      });

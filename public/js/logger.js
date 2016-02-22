@@ -1,8 +1,8 @@
 'use strict';
 
-var environmentLevel= wichLevel(FRONTEND_LOGGER_LEVEL);
+var environmentLevel= whichLevel(FRONTEND_LOGGER_LEVEL);
 
-function wichLevel(environment){
+function whichLevel(environment){
   for (var i = 0; i < LEVELS.length; i++) {
     if (LEVELS[i] === environment){
       return i;
@@ -18,7 +18,7 @@ angular.module('log', [])
         level: level,
         data: obj,
       };
-      if (environmentLevel <= wichLevel(level)) {
+      if (environmentLevel <= whichLevel(level)) {
         $http.post('/api/log', data).then();
         console.log(data);
       }
