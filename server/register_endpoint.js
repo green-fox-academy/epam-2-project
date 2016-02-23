@@ -9,11 +9,11 @@ function registerEndpoint(connection) {
       if (err)
       {
          logger.error(err);
-         res.status(500).json({error: err});
+         res.status(500).json({database_post_method_error: err.toString()});
       }
       else
       {
-         res.status(200).json(result.rows);
+         res.status(200).json(req.body.email);
       }
     });
   };
