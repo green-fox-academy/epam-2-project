@@ -8,11 +8,12 @@ app.controller('epamController', ['$scope', 'logger', function($scope, logger) {
 
 
 
-app.controller('RegistrationController', function($http) {
+app.controller('RegistrationController', function($http, $state) {
   this.user = {};
   this.addUser= function() {
     $http.post('db/users/', this.user).then(function(response) {
       this.okCallback = response;
+      $state.go('home');
     },
     function(err) {
       this.errorCallback = err;
@@ -40,5 +41,9 @@ app.config(function($stateProvider, $urlRouterProvider){
           .state('login', {
               url: '/login',
               templateUrl: 'templates/partial-login.html'
+          })
+          .state('home', {
+              url: '/home',
+              templateUrl: 'templates/partial-home.html'
           });
       });
