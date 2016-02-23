@@ -12,7 +12,7 @@ function setup(connection) {
   app.use(bodyParser.json());
 
   app.get('/heartbeat', heartbeatEndpoint(connection));
-  app.get('/api/register', registerEndpoint(connection));
+  app.post('/api/register', registerEndpoint(connection));
   app.post('/api/log', function (req, res) {
     logger[req.body.level]({
       origin: 'FRONTEND',
