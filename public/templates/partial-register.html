@@ -2,7 +2,7 @@
 	<form name="registrationForm" ng-controller="RegistrationController as regCtrl"
 				ng-submit="registrationForm.$valid && regCtrl.addUser(user)" novalidate>
 		<div class="inputs">
-			<input class="tofill" ng-model="regCtrl.user.user_email" placeholder="Type your email address" type="email" required/>
+			<input class="tofill" ng-model="regCtrl.user.email" placeholder="Type your email address" type="email" required/>
 			<input class="tofill" ng-model="regCtrl.user.password" placeholder="Pick a password" type="password" required/>
 			<button class="registrationButton" type="submit"> Register </button>
 			<a ui-sref="login" class="link"> Log in </a>
