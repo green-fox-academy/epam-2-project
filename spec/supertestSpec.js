@@ -20,3 +20,28 @@ describe('Return users error', function () {
       });
   });
 });
+
+
+var connRegister = {
+  dbConnection: function(data, cb) {cb(null, {email: 'test@test'});}
+};
+
+describe('Register request test', function () {
+  it('supertest', function(done) {
+    var app = server(connRegister);
+    request(app)
+      .post('/api/register')
+      .send({email: 'test@test', password: 'test'})
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .end(function (err, res) {
+        if (err) {
+          throw err;
+        }
+        else {
+          expect(res.body).toEqual('test@test');
+        }
+        done();
+      });
+  });
+});
