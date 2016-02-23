@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var heartbeatEndpoint = require('./heartbeat_endpoint');
 var logger = require('./logger');
+var registerEndpoint = require('./register_endpoint')
 
 function setup(connection) {
   var app = express();
@@ -11,6 +12,7 @@ function setup(connection) {
   app.use(bodyParser.json());
 
   app.get('/heartbeat', heartbeatEndpoint(connection));
+  app.get('/api/register', registerEndpoint(connection));
   app.post('/api/log', function (req, res) {
     logger[req.body.level]({
       origin: 'FRONTEND',

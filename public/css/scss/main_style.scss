@@ -89,5 +89,14 @@ a button {
   font-size: $fontSize;
   height: $buttonHeight;
   width: 450px;
+}
 
+.link {
+  color: $blue;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
