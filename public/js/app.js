@@ -1,26 +1,10 @@
 'use strict';
 
-var app = angular.module('interviewApp', ['ui.router','log']);
+var app = angular.module('interviewApp', ['ui.router','log', 'register']);
 app.controller('epamController', ['$scope', 'logger', function($scope, logger) {
   logger.info('onload');
   $scope.logoname = 'Epam';
 }]);
-
-
-
-app.controller('RegistrationController', function($http, $state) {
-  this.user = {};
-  this.addUser= function() {
-    $http.post('db/users/', this.user).then(function(response) {
-      this.okCallback = response;
-      $state.go('home');
-    },
-    function(err) {
-      this.errorCallback = err;
-    });
-  };
-});
-
 
 
 
