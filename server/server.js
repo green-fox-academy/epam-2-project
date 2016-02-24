@@ -13,6 +13,7 @@ function setup(connection) {
 
   app.get('/heartbeat', heartbeatEndpoint(connection));
   app.post('/api/register', registerEndpoint(connection));
+  app.post('/api/logout', function (req, res) {res.status(200).json({}) });
   app.post('/api/log', function (req, res) {
     logger[req.body.level]({
       origin: 'FRONTEND',
@@ -22,6 +23,7 @@ function setup(connection) {
     });
     res.status(200).json({});
   });
+
 
   function logRequest(req, res, next) {
     var parts = {
