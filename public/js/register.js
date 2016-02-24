@@ -7,7 +7,8 @@ var app = angular.module('register', ['log'])
 app.factory('userFactory', function($http) {
     var user = {
       email: '',
-      password: '' 
+      password: '', 
+      logged: true,
     };
     return {
       user: user
@@ -27,8 +28,9 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
     
 
   function okCallback(response) {
-    userFactory.email=response.data;
+    userFactory.user.email=response.data;
     $state.go('home');
+    userFactory.user.logged = true;
   };
 
   function errorCallback(err) {
@@ -46,3 +48,12 @@ function createMessage (message) {
     return 'Database error. Please try again later.'
   }
 }
+
+app.controller('homelogging', function($scope, userFactory) {
+    $scope.email = userFactory.user.email;
+});
+
+app.controller('HomepageController', function($scope, $state, userFactory) {
+    $scope.logged = userFactory.user.logged;  
+}); 
+
