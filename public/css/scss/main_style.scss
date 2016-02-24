@@ -8,8 +8,9 @@ $fontSize: 16px;
 
 $headerHeight: 80px;
 $buttonHeight: 50px;
+$buttonWidth: 150px;
 $inputHeight: $buttonHeight;
-$inputWidth: 150px;
+$inputWidth: 450px;
 
 $borderRadius: 3px;
 
@@ -68,7 +69,7 @@ button {
   height: $buttonHeight;
   margin-bottom: 10px;
   text-transform: uppercase;
-  width: $inputWidth;
+  width: $buttonWidth;
 }
 
 .middlebox {
@@ -85,11 +86,13 @@ button {
   border-color: $blue;
   border-style: solid;
   box-shadow: inset 0 1px 6px -3px $darkgrey;
+  box-sizing: border-box;
   font-family: 'Lato';
   font-size: $fontSize;
   margin-bottom: 15px;
   height: $buttonHeight;
-  width: 450px;
+  padding-left: 18px;
+  width: $inputWidth;
 }
 
 .link {
@@ -103,14 +106,27 @@ button {
   flex-direction: column;
   margin-top: 220px;
   text-align: center;
+  max-width: $inputWidth;
 }
 
-.templates {
+.template {
   display: flex;
   height: 500px;
   justify-content: center;
 }
 
+.errorMessage {
+  background-color: red;
+  border-radius: $borderRadius;
+  font-family: 'Lato';
+  font-size: $fontSize;
+  line-height: $inputHeight;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+  width: $inputWidth;
+}
 
 @mixin placeholder {
   ::-webkit-input-placeholder {@content};
@@ -118,5 +134,4 @@ button {
 
 @include placeholder {
     color: $darkgrey;
-    padding-left: 18px;
 }
