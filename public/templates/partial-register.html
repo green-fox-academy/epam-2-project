@@ -1,7 +1,8 @@
-<div>
+<div class="template">
 	<form name="registrationForm" ng-controller="RegistrationController as regCtrl"
 				ng-submit="registrationForm.$valid && regCtrl.addUser(user)" novalidate>
 		<div class="inputs">
+			<div class="errorMessage" ng-show="regCtrl.shown">{{regCtrl.errMessage}}</div>
 			<input class="tofill" ng-model="regCtrl.user.email" placeholder="Type your email address" type="email" required/>
 			<input class="tofill" ng-model="regCtrl.user.password" placeholder="Pick a password" type="password" required/>
 			<button class="registrationButton" type="submit"> Register </button>

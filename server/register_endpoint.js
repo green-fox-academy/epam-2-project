@@ -9,7 +9,7 @@ function registerEndpoint(connection) {
       if (err)
       {
          logger.error(err);
-         res.status(500).json({database_post_method_error: err.toString()});
+         res.status(500).json({database_post_method_error: err.toString(),code: err.code});
       }
       else
       {
