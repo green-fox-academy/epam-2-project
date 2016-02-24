@@ -66,6 +66,7 @@ function setup(connection) {
     res.status(200).json({});
   });
 
+
   function logRequest(req, res, next) {
     var parts = {
       date:new Date(),
