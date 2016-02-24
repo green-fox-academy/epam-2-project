@@ -15,21 +15,34 @@ app.factory('userFactory', function($http) {
   });
 
 app.controller('RegistrationController', function($http, $state, logger, userFactory) {
+    this.errMessage = 'sgerg';
+    this.shown = false;
     this.user= {};
-    console.log(this.user);
-    console.log(userFactory.user);
+    var _this = this;
+
     this.addUser= function(response) {
-      $http.post('/api/register', this.user).then(function(response) {
-        console.log(response.data);
-        userFactory.email=response.data;
-        $state.go('home');
-      }),
-      function(err) {
-        logger.error(err);
-    };
+      $http.post('/api/register', this.user).then(okCallback,errorCallback);
   };
+
+    
+
+  function okCallback(response) {
+    userFactory.email=response.data;
+    $state.go('home');
+  };
+
+  function errorCallback(err) {
+    logger.error(err);
+    _this.errMessage = createMessage(err);
+    _this.shown = true;
+  };
+
 });
 
-
-
-
+function createMessage (message) {
+  if (message.data.code === '23505') {
+    return 'This email already exists!'
+  } else {
+    return 'Database error. Please try again later.'
+  }
+}
