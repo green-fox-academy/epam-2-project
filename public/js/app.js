@@ -7,7 +7,6 @@ app.controller('epamController', ['$scope', 'logger', function($scope, logger) {
 }]);
 
 
-
 app.config(function($stateProvider, $urlRouterProvider){
 
       $urlRouterProvider.otherwise('/');
@@ -28,6 +27,16 @@ app.config(function($stateProvider, $urlRouterProvider){
           })
           .state('home', {
               url: '/home',
-              templateUrl: 'templates/partial-home.html'
+              templateUrl: 'templates/partial-home.html',
+              // controller: function($rootScope, $state) {
+              //   if (!$rootScope.user) {
+              //     $state.go('index');
+              //   }
+              // }
           });
       });
+
+
+app.controller('homelogging', function($scope, userFactory) {
+    $scope.email = userFactory.email;
+});
