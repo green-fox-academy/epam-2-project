@@ -11,3 +11,9 @@ work in Localhost:
   npm install -g gulp
 
   gulp sass (to generate the css)
+	
+	in terminal:
+	psql -U postgres 
+	(password: postgres)  
+	CREATE TABLE USERS (user_id SERIAL, email TEXT NOT NULL, password TEXT NOT NULL, status TEXT DEFAULT 'user', UNIQUE (email), PRIMARY KEY (user_id));
+
