@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var app = angular.module('register', ['log'])
 
 app.factory('userFactory', function($http) {
@@ -25,8 +23,6 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
       $http.post('/api/register', this.user).then(okCallback,errorCallback);
   };
 
-
-
   function okCallback(response) {
     userFactory.email=response.data;
     $state.go('home');
@@ -47,3 +43,11 @@ function createMessage (message) {
     return 'Database error. Please try again later.'
   }
 }
+
+app.controller('homelogging', function($scope, userFactory) {
+   $scope.email = userFactory.user.email;
+});
+
+app.controller('HomepageController', function($scope, $state, userFactory) {
+   $scope.logged = userFactory.user.logged;
+});
