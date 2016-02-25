@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var app = angular.module('register', ['log'])
 
 app.factory('userFactory', function($http) {
@@ -16,7 +14,7 @@ app.factory('userFactory', function($http) {
   });
 
 app.controller('RegistrationController', function($http, $state, logger, userFactory) {
-    this.errMessage = 'sgerg';
+    this.errMessage = '';
     this.shown = false;
     this.user= {};
     var _this = this;
@@ -25,12 +23,9 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
       $http.post('/api/register', this.user).then(okCallback,errorCallback);
   };
 
-
-
   function okCallback(response) {
-    userFactory.user.email=response.data;
+    userFactory.email=response.data;
     $state.go('home');
-    userFactory.user.logged = true;
   };
 
   function errorCallback(err) {
@@ -50,7 +45,7 @@ function createMessage (message) {
 }
 
 app.controller('homelogging', function($scope, userFactory) {
-    $scope.email = userFactory.user.email;
+   $scope.email = userFactory.user.email;
 });
 
 app.controller('HomepageController', function($scope, $state, userFactory) {
