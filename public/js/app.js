@@ -29,14 +29,9 @@ app.config(function($stateProvider, $urlRouterProvider){
           .state('home', {
               url: '/home',
               templateUrl: 'templates/partial-home.html',
-              // controller: function($rootScope, $state) {
-              //   if (!$rootScope.user) {
-              //     $state.go('index');
-              //   }
-              // }
+              controller: 'HomepageController',
           });
       });
-
 
 app.controller('homelogging', function($scope, userFactory) {
     $scope.email = userFactory.email;
