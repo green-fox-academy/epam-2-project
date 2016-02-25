@@ -7,8 +7,8 @@ var app = angular.module('register', ['log'])
 app.factory('userFactory', function($http) {
     var user = {
       email: '',
-      password: '', 
-      logged: true,
+      password: '',
+      logged: false,
     };
     return {
       user: user
@@ -25,7 +25,7 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
       $http.post('/api/register', this.user).then(okCallback,errorCallback);
   };
 
-    
+
 
   function okCallback(response) {
     userFactory.user.email=response.data;
@@ -54,6 +54,11 @@ app.controller('homelogging', function($scope, userFactory) {
 });
 
 app.controller('HomepageController', function($scope, $state, userFactory) {
-    $scope.logged = userFactory.user.logged;  
-}); 
+    $scope.logged = userFactory.user.logged;
 
+    $scope.logout = function() {
+      $scope.logged = false;
+      userFactory.user.logged = false;
+      $state.go('index');
+    }
+});
