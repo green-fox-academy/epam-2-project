@@ -6,7 +6,7 @@ app.factory('userFactory', function($http) {
     var user = {
       email: '',
       password: '',
-      logged: false,
+      logged: true,
     };
     return {
       user: user
@@ -24,7 +24,7 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
   };
 
   function okCallback(response) {
-    userFactory.email=response.data;
+    userFactory.email=response.data.email;
     $state.go('home');
   };
 
@@ -33,7 +33,6 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
     _this.errMessage = createMessage(err);
     _this.shown = true;
   };
-
 });
 
 function createMessage (message) {
@@ -49,11 +48,5 @@ app.controller('homelogging', function($scope, userFactory) {
 });
 
 app.controller('HomepageController', function($scope, $state, userFactory) {
-    $scope.logged = userFactory.user.logged;
-
-    $scope.logout = function() {
-      $scope.logged = false;
-      userFactory.user.logged = false;
-      $state.go('index');
-    }
+   $scope.logged = userFactory.user.logged;
 });

@@ -13,7 +13,7 @@ function registerEndpoint(connection) {
       }
       else
       {
-         res.status(200).json(req.body.email);
+         res.status(200).json({email:req.body.email});
       }
     });
   };

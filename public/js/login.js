@@ -13,22 +13,15 @@ app.controller('LoginController', function($http, $state, logger, userFactory) {
   };
 
   function okCallback(response) {
-    userFactory.email=response.data;
+    userFactory.email=response.data.email;
     $state.go('home');
   };
 
   function errorCallback(err) {
     logger.error(err);
-    _this.errMessage = createMessage(err);
+    _this.errMessage = err.data;
+    console.log(_this.errMessage);
     _this.shown = true;
   };
 
 });
-
-function createMessage (message) {
-  if (message.data.code === '23505') {
-    return 'This email already exists!'
-  } else {
-    return 'Database error. Please try again later.'
-  }
-}
