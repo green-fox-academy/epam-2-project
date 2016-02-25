@@ -4,6 +4,6 @@
   <div class="homepage">
     <div>{{email}}</div>
     <div>Welcome!</div>
-    <button class="logoutButton">log out</button>
+    <div ng-controller="HomepageController" ><button class = "logoutbutton" ng-show="logged" ng-click="logout()">Log out</button></div>
   </div>
 </div>
