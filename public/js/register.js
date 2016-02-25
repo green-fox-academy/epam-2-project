@@ -26,6 +26,7 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
   function okCallback(response) {
     userFactory.email=response.data.email;
     $state.go('home');
+    userFactory.user.logged = true;
   };
 
   function errorCallback(err) {
@@ -44,7 +45,7 @@ function createMessage (message) {
 }
 
 app.controller('homelogging', function($scope, userFactory) {
-   $scope.email = userFactory.user.email;
+   $scope.email = userFactory.email;
 });
 
 app.controller('HomepageController', function($scope, $state, userFactory) {
