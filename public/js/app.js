@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('interviewApp', ['ui.router','log', 'register']);
+var app = angular.module('interviewApp', ['ui.router','log', 'register', 'login']);
 app.controller('epamController', ['$scope', 'logger', function($scope, logger) {
   logger.info('onload');
   $scope.logoname = 'Epam';
@@ -23,7 +23,8 @@ app.config(function($stateProvider, $urlRouterProvider){
           })
           .state('login', {
               url: '/login',
-              templateUrl: 'templates/partial-login.html'
+              templateUrl: 'templates/partial-login.html',
+              controller: 'loginController'
           })
           .state('home', {
               url: '/home',
