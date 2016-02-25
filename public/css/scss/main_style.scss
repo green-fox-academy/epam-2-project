@@ -109,6 +109,26 @@ button {
   max-width: $inputWidth;
 }
 
+.homepage {
+  width: auto;
+  height: auto;
+  background-image: url('https://www.epam.com/content/dam/epam/careers/locations/Hungary_A-Spot.jpg.transform/resize_w_1200/image.jpg');
+  color: white;
+}
+
+.logoutbutton {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: $lightgrey;
+  font-family: 'Oswald';
+  font-size: $fontSize;
+  color: $darkgrey;
+  text-transform: uppercase;
+  box-shadow: none;
+  height: 80px;
+}
+
 .template {
   display: flex;
   height: 500px;
