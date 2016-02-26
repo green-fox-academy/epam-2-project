@@ -3,11 +3,7 @@
 var environmentLevel= whichLevel(FRONTEND_LOGGER_LEVEL);
 
 function whichLevel(environment){
-  for (var i = 0; i < LEVELS.length; i++) {
-    if (LEVELS[i] === environment){
-      return i;
-    }
-  }
+  return levels.indexOf(environment);
 }
 
 angular.module('log', [])

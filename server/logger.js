@@ -5,11 +5,7 @@ var levels = require('./config.js').levels;
 var environmentLevel= whichLevel(environment);
 
 function whichLevel(environment){
-  for (var i = 0; i < levels.length; i++) {
-    if (levels[i] === environment){
-      return i;
-    }
-  }
+  return levels.indexOf(environment);
 }
 
 function debug(object) {
