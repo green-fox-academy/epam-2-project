@@ -1,9 +1,9 @@
-
-
-<div ng-controller = "HomeLogging">
+<div ng-controller="HomeLogging">
   <div class="homepage">
-    <div>{{email}}</div>
-    <div>Welcome!</div>
-    <div ng-controller="HomepageController" ><button class = "logoutbutton" ng-show="logged" ng-click="logout()">Log out</button></div>
+    <div class="welcomeMessage">
+      <div>{{email}}</div>
+      <div class="greeting">Welcome!</div>
+    </div>
+    <div ng-controller="HomepageController" ><button class="logoutbutton" ng-show="logged" ng-click="logout()">Log out</button></div>
   </div>
 </div>

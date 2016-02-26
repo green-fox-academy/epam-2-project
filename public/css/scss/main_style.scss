@@ -159,3 +159,16 @@ button {
 @include placeholder {
     color: $darkgrey;
 }
+
+.welcomeMessage {
+  font-size: $fontSizeLarge;
+  position: absolute;
+  left: 20%;
+  top: 27%;
+}
+
+.greeting {
+  font-family: 'Oswald';
+  font-size: 30px;
+  text-transform: uppercase;
+}
