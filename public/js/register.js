@@ -1,12 +1,12 @@
 'use strict';
 
-var app = angular.module('register', ['log'])
+var app = angular.module('register', ['log']);
 
 app.factory('userFactory', function($http) {
     var user = {
       email: '',
       password: '',
-      logged: true,
+      logged: false,
     };
     return {
       user: user
@@ -43,11 +43,3 @@ function createMessage (message) {
     return 'Database error. Please try again later.'
   }
 }
-
-app.controller('homelogging', function($scope, userFactory) {
-   $scope.email = userFactory.email;
-});
-
-app.controller('HomepageController', function($scope, $state, userFactory) {
-   $scope.logged = userFactory.user.logged;
-});
