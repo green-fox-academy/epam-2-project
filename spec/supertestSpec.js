@@ -39,7 +39,7 @@ describe('Register request test', function () {
           throw err;
         }
         else {
-          expect(res.body).toEqual('test@test');
+          expect(res.body.email).toEqual('test@test');
         }
         done();
       });
