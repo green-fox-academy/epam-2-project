@@ -110,11 +110,14 @@ button {
 }
 
 .homepage {
-  width: auto;
-  height: auto;
-  background-image: url('https://www.epam.com/content/dam/epam/careers/locations/Hungary_A-Spot.jpg.transform/resize_w_1200/image.jpg');
-  background-size: auto;
+  height: calc(100vh - 81px);
+  background: {
+    image: url('https://www.epam.com/content/dam/epam/careers/locations/Hungary_A-Spot.jpg.transform/resize_w_1200/image.jpg');
+    repeat: no-repeat;
+    size: 100%;
+  }
   color: white;
+  // overflow-y: hidden;
 }
 
 .logoutbutton {

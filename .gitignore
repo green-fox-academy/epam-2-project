@@ -1,4 +1,5 @@
 .DS_Store
+.sass-caches/*
 node_modules/*
 *.pdf
 *.css
