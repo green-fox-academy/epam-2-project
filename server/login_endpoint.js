@@ -20,7 +20,6 @@ function loginEndpoint(connection) {
           logger.info(user);
           return res.status(200).json({
             email: user.email,
-            id: user.id,
             status: user.status,
           });
         });

@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var app = angular.module('register', ['log'])
 
 app.factory('userFactory', function($http) {
@@ -16,7 +14,7 @@ app.factory('userFactory', function($http) {
   });
 
 app.controller('RegistrationController', function($http, $state, logger, userFactory) {
-    this.errMessage = 'sgerg';
+    this.errMessage = '';
     this.shown = false;
     this.user= {};
     var _this = this;
@@ -25,34 +23,31 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
       $http.post('/api/register', this.user).then(okCallback,errorCallback);
   };
 
-
-
   function okCallback(response) {
-    userFactory.user.email=response.data;
+    userFactory.email=response.data.email;
     $state.go('home');
     userFactory.user.logged = true;
-  }
+  };
 
   function errorCallback(err) {
     logger.error(err);
     _this.errMessage = createMessage(err);
     _this.shown = true;
-  }
-
+  };
 });
 
 function createMessage (message) {
   if (message.data.code === '23505') {
-    return 'This email already exists!';
+    return 'This email already exists!'
   } else {
-    return 'Database error. Please try again later.';
+    return 'Database error. Please try again later.'
   }
 }
 
 app.controller('homelogging', function($scope, userFactory) {
-    $scope.email = userFactory.user.email;
+   $scope.email = userFactory.email;
 });
 
 app.controller('HomepageController', function($scope, $state, userFactory) {
-    $scope.logged = userFactory.user.logged;
+   $scope.logged = userFactory.user.logged;
 });
