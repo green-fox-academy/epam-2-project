@@ -9,7 +9,11 @@ function registerEndpoint(connection) {
       if (err)
       {
         logger.error(err);
-        res.status(500).json({database_post_method_error: err.toString(),code: err.code});
+        if (err.code === '23505'){
+          res.status(500).json({errorMessage: 'This email already exists!'})
+        } else{
+          res.status(500).json({errorMessage: 'Database error. Please try again later.'});
+        }
       }
       else
       {

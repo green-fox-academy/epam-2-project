@@ -27,19 +27,15 @@ app.controller('RegistrationController', function($http, $state, logger, userFac
     userFactory.email=response.data.email;
     $state.go('home');
     userFactory.user.logged = true;
-  };
+  }
 
   function errorCallback(err) {
     logger.error(err);
     _this.errMessage = createMessage(err);
     _this.shown = true;
-  };
+  }
 });
 
 function createMessage (message) {
-  if (message.data.code === '23505') {
-    return 'This email already exists!'
-  } else {
-    return 'Database error. Please try again later.'
-  }
+    return message.data.errorMessage;
 }
