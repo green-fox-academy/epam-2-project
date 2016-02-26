@@ -15,6 +15,7 @@ app.controller('LoginController', function($http, $state, logger, userFactory) {
   function okCallback(response) {
     userFactory.email=response.data.email;
     $state.go('home');
+    userFactory.user.logged = true;
   }
 
   function errorCallback(err) {
