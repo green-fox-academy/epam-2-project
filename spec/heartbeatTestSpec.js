@@ -1,6 +1,6 @@
 'use strict';
 
-var heartbeat = require('../server/heartbeat');
+var heartbeat = require('../server/heartbeat/heartbeat');
 
 describe('test heartbeat', function() {
   it('is respons array', function(done) {

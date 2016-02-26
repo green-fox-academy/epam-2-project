@@ -1,10 +1,10 @@
 'use strict';
 var express = require('express');
 var bodyParser = require('body-parser');
-var heartbeatEndpoint = require('./heartbeat_endpoint');
+var heartbeatEndpoint = require('./heartbeat/heartbeat_endpoint');
 var logger = require('./logger');
 var loginEndpoint = require('./login_endpoint');
-var registerEndpoint = require('./register_endpoint');
+var registerEndpoint = require('./register/register_endpoint');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var users = require('./users');
