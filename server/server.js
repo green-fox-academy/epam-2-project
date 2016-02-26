@@ -21,25 +21,9 @@ function setup(connection) {
 
   app.get('/heartbeat', heartbeatEndpoint(connection));
   app.post('/api/register', registerEndpoint(connection));
-  app.post('/api/login', function (req, res, next) {
-    passport.authenticate('local', function (err, user, info) {
-      if (err) {
-        logger.error(err);
-        res.status(500).send(info);
-      } else if (user) {
-        logger.info(user);
-        req.logIn(user, function (err) {
-          if (err) return next(err);
-          return res.status(200).json({
-            email: user.email,
-            id: user.id,
-            status: user.status,
-          });
-        });
-      } else {
-        res.status(401).send(info);
-      }
-    })(req, res, next);
+  app.post('/api/login', loginEndpoint(connection));
+  app.post('/api/logout', function(req, res) {
+    res.status(200).json({});
   });
   app.post('/api/log', function (req, res) {
     logger[req.body.level]({
