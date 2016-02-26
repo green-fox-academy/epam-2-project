@@ -10,7 +10,7 @@ app.controller('HomeLogging', function($scope, userFactory) {
 
 app.controller('HomepageController', function($http, $scope, $state,logger, userFactory) {
    $scope.logout= function(response) {
-     $http.post('/api/logout', userFactory.user ).then(okCallback,errorCallback);
+     $http.post('/api/logout', userFactory.user).then(okCallback,errorCallback);
    };
 
    function okCallback(response) {
@@ -21,6 +21,4 @@ app.controller('HomepageController', function($http, $scope, $state,logger, user
    function errorCallback(err) {
      logger.error(err);
    };
-
-
 });
