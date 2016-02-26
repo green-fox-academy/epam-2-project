@@ -20,7 +20,6 @@ app.controller('LoginController', function($http, $state, logger, userFactory) {
   function errorCallback(err) {
     logger.error(err);
     _this.errMessage = err.data;
-    console.log(_this.errMessage);
     _this.shown = true;
   };
 
