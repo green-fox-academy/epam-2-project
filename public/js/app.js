@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('interviewApp', ['ui.router','log', 'register', 'login']);
+var app = angular.module('interviewApp', ['ui.router','log', 'register', 'login', 'home']);
 app.controller('epamController', ['$scope', 'logger', function($scope, logger) {
   logger.info('onload');
   $scope.logoname = 'Epam';
@@ -32,7 +32,3 @@ app.config(function($stateProvider, $urlRouterProvider){
               controller: 'HomepageController',
           });
       });
-
-app.controller('homelogging', function($scope, userFactory) {
-    $scope.email = userFactory.email;
-});
