@@ -1,6 +1,6 @@
 'use strict';
 
-var register = require('../server/register');
+var register = require('../server/register/register');
 
 
 describe('user post test', function() {

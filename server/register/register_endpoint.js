@@ -1,7 +1,7 @@
 'use strict';
 
 var register = require('./register');
-var logger = require('./logger');
+var logger = require('../logger');
 
 function registerEndpoint(connection) {
   return function(req, res) {

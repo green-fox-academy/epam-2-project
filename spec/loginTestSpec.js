@@ -1,6 +1,6 @@
 'use strict';
 
-var loginEndpoint = require('../server/login_endpoint');
+var loginEndpoint = require('../server/login/login_endpoint');
 
 
 describe('Login endpoint test', function() {

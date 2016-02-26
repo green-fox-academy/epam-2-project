@@ -1,7 +1,7 @@
 'use strict';
 
 var heartbeat = require('./heartbeat');
-var logger = require('./logger');
+var logger = require('../logger');
 
 function test(connection) {
   return function(req, res) {
